@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./assets/alura-logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img src="./assets/alura-logo.png" alt="logo alura">
+        <!-- <h1>Decodificador de texto</h1> -->
+    </header>
+
+    <main class="geral">
+        <section>
+            <textarea class="digite__texto" cols="41" rows="4" placeholder="Digite seu texto..."></textarea>
+
+            <div class="info">
+                <img src="./assets/Ponto-exclamacao.png" alt="icone de informação">
+                <h6> Apenas letras minúsculas e sem acento.</h6>
+            </div>
+
+            <div class="botoes">
+                <button class="criptografar" onclick="criptografar()"  value="criptografar">Criptografar</button>
+                <button class="descriptografar" onclick="descriptografar()" value="descriptografar">Descriptografar</button>
+            </div>
+
+        </section>
+
+
+        <section>
+            <div class="resultados">
+                <img src="./assets/olhando-diamante.png" alt="homem com uma lupa">
+                    <div class="titulo__resultados" id="titulo__encriptado">
+                        <h2 id="titulo-resultado"> Nenhuma mensagem encontrada</h2>
+                    <p id="subtitulo-resultado">Digite um texto que você deseja criptografar ou descriptografar.</p>
+                <textarea class="texto__resultado" name="resultado" id="resultado" cols="30" rows="10"></textarea>
+            </div>
+
+                <div><button class="copiar" onclick="copiar">Copiar</button></div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <footer class="rodape">
+        <a href="https://www.linkedin.com/in/viviane-alima/">
+            <img src="./assets/linkedin.png" height="32" width="32">
+        </a>
+        <p>Desenvolvido por Viviane Lima.</p>
+
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
