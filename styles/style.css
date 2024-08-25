@@ -101,7 +101,7 @@ body {
     top: 15%;
 }
 
-.titulo__resultados {
+.titulo__resultados h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,6 +116,23 @@ body {
     color: var(--cor-prata);
     font-weight: 700;
     font-size: 24px;
+}
+
+.titulo__resultados p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+    /* padding: 1%;
+    width: 100%;
+    top: 65%; */
+    background-color: var(--cor-copiaecola);
+    font-family: var(--fonte);
+    color: var(--cor-prata);
+    font-weight: 400;
+    font-size: 16px;
 }
 
 
