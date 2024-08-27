@@ -14,8 +14,7 @@
 
 <body>
     <header class="cabecalho">
-        <img src="./assets/alura-logo.png" alt="logo alura">
-        <!-- <h1>Decodificador de texto</h1> -->
+        <img src="./assets/alura logo.svg" alt="logo alura">
     </header>
 
     <main class="geral">
@@ -23,41 +22,37 @@
             <textarea class="digite__texto" cols="41" rows="4" placeholder="Digite seu texto..."></textarea>
 
             <div class="info">
-                <img src="./assets/Ponto-exclamacao.png" alt="icone de informação">
+                <img src="./assets/aviso.svg" alt="icone de informação">
                 <h6> Apenas letras minúsculas e sem acento.</h6>
             </div>
 
             <div class="botoes">
-                <button class="criptografar" onclick="criptografar()"  value="criptografar">Criptografar</button>
-                <button class="descriptografar" onclick="descriptografar()" value="descriptografar">Descriptografar</button>
+                <button class="criptografar" onclick="criptografar()">Criptografar</button>
+                <button class="descriptografar" onclick="descriptografar()">Descriptografar</button>
             </div>
-
         </section>
-
 
         <section>
             <div class="resultados">
-                <img src="./assets/olhando-diamante.png" alt="homem com uma lupa">
-                    <div class="titulo__resultados" id="titulo__encriptado">
-                        <h2 id="titulo-resultado"> Nenhuma mensagem encontrada</h2>
-                    <p id="subtitulo-resultado">Digite um texto que você deseja criptografar ou descriptografar.</p>
-                <textarea class="texto__resultado" name="resultado" id="resultado" cols="30" rows="10" disabled></textarea>
-            </div>
+                <div class="titulo__resultados" id="titulo__encriptado">
+                    <img src="./assets/procurando.svg" alt="homem com uma lupa">
+                    <h2 id="titulo-resultado">Nenhuma mensagem <br> encontrada</h2>
+                    <p id="subtitulo-resultado">Digite um texto que você deseja <br> criptografar ou descriptografar.</p>
+                    <textarea class="texto__resultado" id="resultado" cols="30" rows="10" readonly></textarea>
+                </div>
 
-                <div><button class="copiar" onclick="copiar">Copiar</button></div>
+                <div><button class="copiar" onclick="copiar()">Copiar</button></div>
             </div>
-
         </section>
     </main>
-
 
     <footer class="rodape">
         <a href="https://www.linkedin.com/in/viviane-alima/">
             <img src="./assets/linkedin.png" height="32" width="32">
         </a>
         <p>Desenvolvido por Viviane Lima.</p>
-
     </footer>
+
     <script src="app.js"></script>
 </body>
 

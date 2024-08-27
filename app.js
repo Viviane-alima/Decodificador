@@ -1,4 +1,3 @@
-// Função para fazer a imagem sumir ao digitar
 const textarea = document.querySelector(".digite__texto");
 const img = document.querySelector(".resultados img");
 const resultado = document.querySelector("#resultado");
@@ -6,13 +5,21 @@ const tituloResultado = document.querySelector("#titulo-resultado");
 const subtituloResultado = document.querySelector("#subtitulo-resultado");
 
 textarea.addEventListener("input", () => {
-  img.style.display = "none";
-  tituloResultado.textContent = "";
+  img.style.display = "none"; 
+  tituloResultado.textContent = ""; 
   subtituloResultado.textContent = "";
-  resultado.value = "";
+  resultado.value = textarea.value;
 });
 
-// Função de criptografia
+
+document.querySelector('.digite__texto').addEventListener('input', function(event) {
+  const texto = event.target.value;
+  const regex = /^[a-z\s]*$/;
+  if (!regex.test(texto)) {
+      event.target.value = texto.replace(/[^a-z\s]/g, '');
+  }
+});
+
 function criptografar() {
   let texto = textarea.value;
   let textoCriptografado = texto
@@ -25,27 +32,16 @@ function criptografar() {
   resultado.value = textoCriptografado;
 }
 
-// Função de copiar texto criptografado
 function copiar() {
-  const resultadoTexto = document.querySelector("#resultado");
-  
-  // Selecionar o texto no textarea
-  resultadoTexto.select();
-  resultadoTexto.setSelectionRange(0, 99999); // Para dispositivos móveis
-  
-  // Copiar o texto selecionado para a área de transferência
-  document.execCommand("copy");
-  
-  // Mensagem de confirmação
-  alert("Texto copiado para a área de transferência!");
+  var textoCopiado = document.getElementById("resultado").value;
+  navigator.clipboard.writeText(textoCopiado).then(function() {
+      alert("Texto copiado para a área de transferência!");
+  }).catch(function(error) {
+      alert("Erro ao copiar texto: " + error);
+  });
 }
 
-// Adicionar o evento ao botão de copiar
-const botaoCopiar = document.querySelector(".copiar");
-botaoCopiar.addEventListener("click", copiar);
 
-
-// Função de descriptografia (se precisar)
 function descriptografar() {
   let textoCriptografado = textarea.value;
   let textoDescriptografado = textoCriptografado
@@ -58,12 +54,11 @@ function descriptografar() {
   resultado.value = textoDescriptografado;
 }
 
-// Limpar o texto do resultado ao apagar o texto na caixa de entrada
 textarea.addEventListener("input", () => {
   if (textarea.value === "") {
     resultado.value = "";
     img.style.display = "block";
-    tituloResultado.textContent = "mensagem encontrada";
+    tituloResultado.textContent = "Nenhuma mensagem  encontrada";
     subtituloResultado.textContent = "Digite um texto que você deseja criptografar ou descriptografar.";
   }
 });
